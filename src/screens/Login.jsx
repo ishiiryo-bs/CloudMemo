@@ -29,6 +29,25 @@ export default function Login({ navigation }) {
     }
   };
 
+  // ユーザの新規登録を行う関数
+  const createUser2 = async () => {
+    try {
+      // 登録処理の実行
+      await createUserWithEmailAndPassword(auth, mail, password);
+      console.log('ユーザー登録成功');
+
+      // 認証情報をSecureStoreに保存
+      await SecureStore.setItemAsync('mail', mail);
+      await SecureStore.setItemAsync('password', password);
+
+      navigation.navigate('MemoList', { userId: mail });
+    } catch (err) {
+      // エラー時の処理
+      console.log('エラー:', err);
+      Alert.alert('エラー', '新規登録に失敗しました');
+    }
+  };
+
   // login関数
   const login = async () => {
     try {
