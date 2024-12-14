@@ -10,8 +10,6 @@ export default function Login({ navigation }) {
   const [mail, setMail] = useState('');
   const [password, setPassword] = useState('');
 
-  // test
-
   // ユーザの新規登録を行う関数
   const createUser = async () => {
     try {
