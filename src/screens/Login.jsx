@@ -25,7 +25,22 @@ export default function Login({ navigation }) {
     } catch (err) {
       // エラー時の処理
       console.log('エラー:', err);
-      Alert.alert('エラー', '新規登録に失敗しました');
+      let msg = '';
+      switch (err.code) {
+        case 'auth/invalid-email':
+          msg = 'メールアドレスが無効です';
+          break;
+        case 'auth/email-already-in-use':
+          msg = 'すでに使用されているメールアドレスです';
+          break;
+        case 'auth/weak-password':
+          msg = '6文字以上のパスワードを設定してください';
+          break;
+        default:
+          msg = '新規登録に失敗しました';
+          break;
+      }
+      Alert.alert(msg);
     }
   };
 
@@ -46,7 +61,7 @@ export default function Login({ navigation }) {
     } catch (err) {
       // エラー時の処理
       console.log('エラー:', err);
-      Alert.alert('エラー', 'ログインに失敗しました');
+      Alert.alert('メールアドレスまたはパスワードが無効です');
     }
   };
 
