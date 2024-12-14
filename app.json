@@ -25,6 +25,18 @@
     },
     "plugins": [
       "expo-secure-store"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "1cc95db2-4c6a-430a-bedc-65dbf04801ee"
+      }
+    },
+    "owner": "ishiiryo.bs",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/1cc95db2-4c6a-430a-bedc-65dbf04801ee"
+    }
   }
 }
