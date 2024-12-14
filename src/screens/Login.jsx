@@ -85,7 +85,6 @@ export default function Login({ navigation }) {
           value={mail}
           onChangeText={(text) => {
             // メールアドレスの状態を更新
-            // 新規追加
             setMail(text);
           }}
           autoCorrect={false}
